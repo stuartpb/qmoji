@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>qmoji</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        display: flex;
+        flex-flow: row;
+      }
+      .side {
+        flex: 1;
+        display: flex;
+        flex-flow: column;
+      }
+      .left {
+        align-items: center;
+        box-sizing: border-box;
+        padding: 24px;
+        gap: 24px;
+        background-color: #369;
+      }
+      input {
+        font-size: 24px;
+        width: 90%;
+      }
+      emoji-picker {
+        flex: 1;
+        width: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
+    <form id="emoji-half" class="left side">
+      <input id="emoji-input" type="text" placeholder="Emoji...">
+      <emoji-picker></emoji-picker>
+    </form>
+    <div id="wd-half" class="right side">
+      <iframe id="selected"></iframe>
+    </div>
+    <script type="module" src="qmoji.js"></script>
+  </body>
+</html>
